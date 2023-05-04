@@ -1,6 +1,6 @@
 # Vue-Three.js
 
-Vue+Three.js 的数字化工厂管理系统
+Vue+Three.js 的数字化工厂管理系统，后台用Node.js开发，代码在src下的server文件夹
 
 ## router-view
 
