@@ -1,29 +1,56 @@
-<<<<<<< HEAD
 # Vue-Three.js
-Vue+Three.js的数字化工厂管理系统
-=======
-# frontend
 
-## Project setup
-```
-npm install
-```
+Vue+Three.js 的数字化工厂管理系统
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## router-view
 
-### Compiles and minifies for production
-```
-npm run build
-```
+关于使用 router-view 不显示父组件的子组件问题：需要指定挂载哪个子组件
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 3/23
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
->>>>>>> 26a8d3d (init)
+    1.面包屑(暂时完成)
+    2.嵌套表单(先放着)
+    3.文件上传表单(完成)
+    4.已有组件的界面
+
+## 3/24
+
+    1.知识仓库界面(完成)
+    2.页面切换动画(完成)
+    3.创建MySql数据表(未完成)
+    4.树视图新增节点(完成)
+
+## 3/27
+
+    1.创建后台，MySql数据表，实现前后台交互
+    2.对数据表完成增删改查
+
+## 4.18
+
+    1.巡检计划、记录的生成
+
+## 4.19
+
+    1.货车，巡检车的停止，返回
+    2.小车运动路径的控制
+
+## 4.20
+
+    1.库存管理的搭建
+    2.出入库功能的实现
+
+## 4.21
+
+    1.3D界面标签展示模型信息
+    2.点击模型显示车间信息，库房库存
+
+## 4.22
+
+    1.登录注册
+    2.给用户分配身份
+    3.根据用户身份在系统中分配不同权限
+
+## 4.23
+
+    1.Echarts请求后端，实现数据获取与展示
+    2.当前液位的实时获取

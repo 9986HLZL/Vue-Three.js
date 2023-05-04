@@ -1,0 +1,136 @@
+let express = require('express')
+let router = express.Router()
+let user = require('./API/user')
+let list = require('./API/list')
+let register = require('./API/register')
+let tasklist = require('./API/tasklist')
+
+let equipmentAcount = require('./API/equipmentAcount')
+let equipmentParts = require('./API/equipmentParts')
+let checkPoint = require('./API/checkPoint')
+let checkPath = require('./API/checkPath')
+let checkTask = require('./API/checkTask')
+let checkRecord = require('./API/checkRecord')
+let factory = require('./API/factory')
+let repairTask = require('./API/repairTask')
+let taskTemplates = require('./API/taskTemplates')
+let spareParts = require('./API/spareParts')
+let lubOil = require('./API/lubOil')
+let inventoryRecord = require('./API/inventoryRecord')
+let role = require('./API/role')
+
+//设备台账
+router.get('/equipmentAcount/get',equipmentAcount.get)
+router.get('/equipmentAcount/add',equipmentAcount.add)
+router.get('/equipmentAcount/update',equipmentAcount.update)
+router.get('/equipmentAcount/del',equipmentAcount.del)
+//设备部件
+router.get('/equipmentParts/get',equipmentParts.get)
+router.get('/equipmentParts/add',equipmentParts.add)
+router.get('/equipmentParts/update',equipmentParts.update)
+router.get('/equipmentParts/del',equipmentParts.del)
+//巡检点
+router.get('/checkPoint/get', checkPoint.get)
+router.get('/checkPoint/getWorkShop',checkPoint.getWorkShop)
+router.get('/checkPoint/add',checkPoint.add)
+router.get('/checkPoint/update',checkPoint.update)
+router.get('/checkPoint/del', checkPoint.del)
+//巡检路线
+router.get('/checkPath/get', checkPath.get)
+router.get('/checkPath/getPoints', checkPath.getPoints)
+router.get('/checkPath/checkPoints', checkPath.checkPoints)
+router.get('/checkPath/savaCheckPoints', checkPath.savaCheckPoints)
+router.get('/checkPath/add',checkPath.add)
+router.get('/checkPath/update',checkPath.update)
+router.get('/checkPath/del', checkPath.del)
+router.get('/checkPath/delPoint', checkPath.delPoint)
+//巡检任务
+router.get('/checkTask/createTask', checkTask.createTask)
+router.get('/checkTask/get', checkTask.get)
+router.get('/checkTask/checkCarStart', checkTask.checkCarStart)
+router.get('/checkTask/finish', checkTask.finish)
+router.get('/checkTask/updatePathTime', checkTask.updatePathTime)
+router.get('/checkTask/updatePointTime', checkTask.updatePointTime)
+//巡检记录
+router.get('/checkRecord/createRecord', checkRecord.createRecord)
+router.get('/checkRecord/get', checkRecord.get)
+
+//3D 工厂
+router.get('/factory/getPosition', factory.getPosition)
+router.get('/factory/checkTask', factory.checkTask)
+router.get('/factory/changeTask', factory.changeTask)
+router.get('/factory/finishChange', factory.finishChange)
+router.get('/factory/updateQuantity', factory.updateQuantity)
+router.get('/factory/updateOil', factory.updateOil)
+router.get('/factory/getLevel', factory.getLevel) //获得液位
+router.get('/factory/working', factory.working)
+router.get('/factory/acceptable', factory.acceptable)
+router.get('/factory/addProdution', factory.addProdution)
+router.get('/factory/getProdution', factory.getProdution)
+
+//维修工单
+router.get('/repairTask/get',repairTask.get)
+router.get('/repairTask/add',repairTask.add)
+router.get('/repairTask/update',repairTask.update)
+router.get('/repairTask/del',repairTask.del)
+//可验收工单
+router.get('/repairTask/acceptableTaskGet',repairTask.acceptableTaskGet)
+router.get('/repairTask/acceptOrder',repairTask.acceptOrder)
+router.get('/repairTask/rejectOrder',repairTask.rejectOrder)
+//可执行工单
+router.get('/repairTask/waitingTaskGet',repairTask.waitingTaskGet)
+router.get('/repairTask/sendOrder',repairTask.sendOrder)
+router.get('/repairTask/finishOrder',repairTask.finishOrder)
+//工单模板
+router.get('/taskTemplates/get',taskTemplates.get)
+router.get('/taskTemplates/add',taskTemplates.add)
+router.get('/taskTemplates/update',taskTemplates.update)
+router.get('/taskTemplates/del',taskTemplates.del)
+//备品备件
+router.get('/spareParts/get',spareParts.get)
+router.get('/spareParts/add',spareParts.add)
+router.get('/spareParts/update',spareParts.update)
+router.get('/spareParts/del', spareParts.del)
+router.get('/spareParts/change', spareParts.change)
+//润滑油品
+router.get('/lubOil/get',lubOil.get)
+router.get('/lubOil/add',lubOil.add)
+router.get('/lubOil/update',lubOil.update)
+router.get('/lubOil/del', lubOil.del)
+router.get('/lubOil/change', lubOil.change)
+//出入库记录
+router.get('/inventoryRecord/createRecord', inventoryRecord.createRecord)
+router.get('/inventoryRecord/get', inventoryRecord.get)
+
+//用户
+router.get('/register/get',register.get)
+router.get('/user/get',user.get)
+router.get('/user/userGet',user.userGet)
+router.get('/user/saveUser', user.saveUser)
+router.get('/user/updatePass', user.updatePass)
+router.get('/user/add',user.add)
+router.get('/user/update',user.update)
+router.get('/user/del', user.del)
+//角色
+router.get('/role/get',role.get)
+router.get('/role/add',role.add)
+router.get('/role/update',role.update)
+router.get('/role/del', role.del)
+
+router.get('/tasklist/get',tasklist.get)
+router.get('/tasklist/del',tasklist.del)
+router.get('/tasklist/add',tasklist.add)
+router.get('/tasklist/update',tasklist.update)
+router.get('/tasklist/waitingTaskGet',tasklist.waitingTaskGet)
+router.get('/tasklist/acceptableTaskGet',tasklist.acceptableTaskGet)
+router.get('/tasklist/sendOrder',tasklist.sendOrder)
+router.get('/tasklist/acceptOrder',tasklist.acceptOrder)
+
+router.get('/list/all',list.all)
+router.post('/list/page',list.page)
+router.get('/list/get',list.get)
+router.get('/list/add',list.add)
+router.get('/list/update',list.update)
+router.get('/list/del',list.del)
+
+module.exports = router
